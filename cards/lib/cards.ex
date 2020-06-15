@@ -20,4 +20,8 @@ def deal(deck, hand_size) do
   Enum.split(deck, hand_size)
 end
 
+def save(deck, filename) do
+  binary = :erlang.term_to_binary(deck)
+    File.write(filename, binary)
+end
 end
